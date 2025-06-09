@@ -5,7 +5,14 @@ from dotenv import load_dotenv
 def test_environment_variables():
     """Test if required environment variables are set"""
     load_dotenv()
-    assert os.getenv('GOOGLE_API_KEY') is not None, "GOOGLE_API_KEY not found in environment variables"
+    # Check if we're in CI environment
+    if os.getenv('CI'):
+        # In CI, we should have the secret set
+        assert os.getenv('GOOGLE_API_KEY') is not None, "GOOGLE_API_KEY not found in CI environment"
+    else:
+        # In local environment, check .env file
+        assert os.path.exists('.env'), ".env file not found"
+        assert os.getenv('GOOGLE_API_KEY') is not None, "GOOGLE_API_KEY not found in .env file"
 
 def test_requirements_file():
     """Test if requirements.txt exists"""
