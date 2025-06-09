@@ -86,7 +86,4 @@ Sources: [List of relevant SMS messages]
   3. Consider using a local LLM for cost reduction
   4. Add evaluation metrics for answer quality
   5. Implement feedback mechanism for improving retrieval
-###
-###
-###
 ---
