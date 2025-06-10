@@ -10,13 +10,16 @@ sentence-transformers>=2.2.2
 langchain_huggingface>=0.0.5
 
 # Web interface
-streamlit>=1.31.0
+streamlit>=1.35.0
 
 # Environment variables
 python-dotenv>=1.0.0
 
 # Data processing
 pandas>=2.1.0
+
+# Deep learning
+torch>=2.3.0
 
 # Testing
 pytest>=7.4.0

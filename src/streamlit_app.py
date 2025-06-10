@@ -1,3 +1,13 @@
+# supress streamlit noisy warnings
+import warnings
+import logging
+import os
+
+warnings.filterwarnings("ignore")
+logging.getLogger("streamlit.watcher.local_sources_watcher").setLevel(logging.ERROR)
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
+
+
 import streamlit as st
 from app import get_qa_chain, ask_question
 
