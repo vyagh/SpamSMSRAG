@@ -1,4 +1,3 @@
-import streamlit as st
 from langchain_google_genai import ChatGoogleGenerativeAI
 import google.generativeai as genai
 from langchain.chains import RetrievalQA
